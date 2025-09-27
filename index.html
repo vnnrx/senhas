@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento de Senhas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Treinamento de Senhas</h1>
+        <label for="senha">Escolha a senha para treinar:</label>
+        <select id="senha">
+            <option value="Expr3355?">Senha Mikrotik</option>
+            <option value="P@werTr@ceRout3">Senha OLT AVT</option>
+            <option value="Bridg3.">Senha Telefone IP</option>
+            <option value="apendice">Senha PABX (apendice)</option>
+            <option value="Z1mBr@">Senha PABX (Z1mBr@)</option>
+        </select>
+
+        <label for="vezes">Quantidade de repetições:</label>
+        <input type="number" id="vezes" value="30" min="1">
+
+        <button onclick="iniciarTreino()">Iniciar Treino</button>
+
+        <div id="treino" class="hidden">
+            <p>Digite a senha selecionada (<span id="meta"></span> vezes):</p>
+            <input type="password" id="entradaSenha" onkeydown="if(event.key==='Enter'){verificarSenha()}">
+            <button onclick="verificarSenha()">Verificar</button>
+            <p id="status"></p>
+            <p id="contador"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
